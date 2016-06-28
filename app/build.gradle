@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply plugin: 'android-apt'
 
 android {
     compileSdkVersion 23
@@ -32,4 +33,10 @@ dependencies {
     compile 'com.github.Batterii:PagingRecycler:v1.1'
 
     compile 'cn.yangbingqiang.android:parallaxviewpager:1.0.1'
+
+    compile 'com.jakewharton:butterknife:8.1.0'
+    apt 'com.jakewharton:butterknife-compiler:8.1.0'
+
+    compile 'com.meetic.shuffle:shuffle:1.0.8'
+    compile 'com.meetic.dragueur:dragueur:1.0.3'
 }
