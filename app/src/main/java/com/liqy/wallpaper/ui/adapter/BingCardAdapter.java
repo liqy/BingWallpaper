@@ -49,7 +49,11 @@ public class BingCardAdapter extends Shuffle.Adapter<ShuffleViewHolder> {
 
     @Override
     public void onBindViewHolder(ShuffleViewHolder viewHolder, int position) {
-        Picasso.with(activity).load(getItem(position)).into(viewHolder.imageView);
+        Picasso.with(activity)
+                .load(getItem(position))
+//                .error(R.drawable.default_pic)
+//                .placeholder(R.drawable.default_pic)
+                .into(viewHolder.imageView);
     }
 
     @Override
