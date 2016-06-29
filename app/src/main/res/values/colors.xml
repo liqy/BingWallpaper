@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorPrimary">#ffcd5e</color>
+    <color name="colorPrimaryDark">#ffb244</color>
     <color name="colorAccent">#FF4081</color>
 
     <color name="colorLeft">#99ea6262</color>
@@ -9,4 +9,5 @@
 
     <color name="bal_shuffle_right">#8f8f8f</color>
     <color name="bal_shuffle_left">#ea6262</color>
+
 </resources>

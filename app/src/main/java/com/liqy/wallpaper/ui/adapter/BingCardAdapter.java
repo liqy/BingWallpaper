@@ -28,7 +28,7 @@ public class BingCardAdapter extends Shuffle.Adapter<ShuffleViewHolder> {
         this.h = DisplayMetricsUtil.getScreenHeight(activity);
         this.w = DisplayMetricsUtil.getScreenWidth(activity);
         this.pics = new ArrayList<>(count);
-        for (int i = 0; i < count; i++) {
+        for (int i = 1; i <=count; i++) {
             this.pics.add(getImageUrl(i, w, h));
         }
     }
@@ -51,8 +51,6 @@ public class BingCardAdapter extends Shuffle.Adapter<ShuffleViewHolder> {
     public void onBindViewHolder(ShuffleViewHolder viewHolder, int position) {
         Picasso.with(activity)
                 .load(getItem(position))
-//                .error(R.drawable.default_pic)
-//                .placeholder(R.drawable.default_pic)
                 .into(viewHolder.imageView);
     }
 
