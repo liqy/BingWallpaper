@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.liqy.wallpaper.Config;
 import com.liqy.wallpaper.R;
 import com.meetic.shuffle.Shuffle;
 import com.squareup.picasso.Picasso;
@@ -27,14 +28,24 @@ public class BingCardAdapter extends Shuffle.Adapter<ShuffleViewHolder> {
         this.activity = activity;
         this.h = DisplayMetricsUtil.getScreenHeight(activity);
         this.w = DisplayMetricsUtil.getScreenWidth(activity);
-        this.pics = new ArrayList<>(count);
-        for (int i = 1; i <=count; i++) {
-            this.pics.add(getImageUrl(i, w, h));
-        }
+        addData(count);
     }
 
-    private String getImageUrl(int i, int w, int h) {
-        return String.format("https://api.ioliu.cn/bing/?d=%1$d&w=%2$d&h=%3$d", i, w, h);
+    public void addData(int count) {
+        if (this.pics == null) {
+            this.pics = new ArrayList<>(count);
+        }
+        int size = this.pics.size();
+        if (size == 0) size = 1;
+        count = count + size;
+        for (int i = size; i < count; i++) {
+            this.pics.add(getImageUrl(i));
+        }
+        notifyDataSetChanged();
+    }
+
+    private String getImageUrl(int i) {
+        return String.format("https://api.ioliu.cn/bing/?d=%1$d&w=%2$d&h=%3$d", i, Config.IMG_BASE_W, Config.IMG_BASE_H);
     }
 
     @Override
